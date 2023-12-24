@@ -1,8 +1,11 @@
 package com.github.quocthinhle.authorizationchallenge.rest.response;
 
-public class UnauthorizedResponse {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+public class UnauthorizedResponse {
+    @JsonProperty("error")
     String error;
+    @JsonProperty("device_session")
     String deviceSession;
 
     public UnauthorizedResponse(String errorMessage, String deviceSession) {
@@ -18,11 +21,12 @@ public class UnauthorizedResponse {
         this.error = error;
     }
 
-    public String getDevice() {
+    public String getDeviceSession() {
         return deviceSession;
     }
 
-    public void setDevice(String device) {
+    public void setDeviceSession(String device) {
         this.deviceSession = device;
     }
 }
+

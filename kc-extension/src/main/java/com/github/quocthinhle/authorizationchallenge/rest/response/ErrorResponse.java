@@ -1,29 +1,31 @@
 package com.github.quocthinhle.authorizationchallenge.rest.response;
 
-import jakarta.ws.rs.core.Response;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ErrorResponse {
 
-    String errorMessage;
+    @JsonProperty("error")
+    String error;
+    @JsonProperty("device_session")
     String deviceSession;
 
     public ErrorResponse() {
-        this.errorMessage = "unexpected_error";
+        this.error = "unexpected_error";
         this.deviceSession = "";
     }
 
 
     public ErrorResponse(String errorMessage) {
-        this.errorMessage = errorMessage;
+        this.error = errorMessage;
         this.deviceSession = "";
     }
 
     public String getErrorMessage() {
-        return errorMessage;
+        return error;
     }
 
     public void setErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
+        this.error = errorMessage;
     }
 
     public String getDeviceSession() {

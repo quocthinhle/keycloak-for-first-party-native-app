@@ -6,13 +6,23 @@
   "directories": {
     "test": "test"
   },
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "testcontainers": "^10.4.0"
+    "jest": "^29.7.0",
+    "testcontainers": "^10.4.0",
+    "ts-jest": "^29.1.1"
+  },
+  "dependencies": {
+    "@keycloak/keycloak-admin-client": "^23.0.3",
+    "@types/jest": "^29.5.11",
+    "axios": "^1.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }
